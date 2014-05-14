@@ -26,7 +26,7 @@ void loop()
     // takes the cameras to respond to the trigger sent to them. The different
     // models take different times and this is accounted for.
     PORTA = B11111111; // T1i fire here
-    delay(1);  // Delay behing T3i for T1i
+    delay(1);  // Delay behind T3i for T1i
     PORTC = B11111111; // T3i fire here
     delay(13); // Delay behind T5i for T3i
     PORTD = B11111111; // T5i fire here
