@@ -18,7 +18,7 @@ void setup() {
 
 void loop()
 {
-  buttonState = digitalRead(7); 
+  buttonState = digitalRead(inputPin); 
   if (buttonState == HIGH) {
     for(int i = startPin; i < endPin; i++) {    
       digitalWrite(i, HIGH);
