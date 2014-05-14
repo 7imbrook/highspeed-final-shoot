@@ -1,14 +1,16 @@
+int inputPin = 7;
+int startPin = 22;
+int endPin = 45;
 
 long wait = 20;
-int buttonState;
 
 void setup() {
   
   // Input
-  pinMode(7, INPUT);
+  pinMode(inputPin, INPUT);
   
   // set the digital pin as output:
-  for(int i = 22; i < 45; i++) {
+  for(int i = startPin; i < endPin; i++) {
     pinMode(i, OUTPUT);
     digitalWrite(i, LOW);
   }
@@ -18,7 +20,7 @@ void loop()
 {
   buttonState = digitalRead(7); 
   if (buttonState == HIGH) {
-    for(int i = 22; i < 45; i++) {    
+    for(int i = startPin; i < endPin; i++) {    
       digitalWrite(i, HIGH);
       delay(1);
       digitalWrite(i, LOW);
@@ -26,4 +28,3 @@ void loop()
     }
   }
 }
-
