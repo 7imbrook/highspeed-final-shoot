@@ -1,5 +1,6 @@
 
 int buttonState;
+long delayTrigger = 0;
 
 void setup() {
   
@@ -22,10 +23,13 @@ void loop()
 {
   buttonState = digitalRead(7); 
   if (buttonState == HIGH) {
+    // Delay stuff, will trigger 51300 microseconds after timmer ends
+    // Delay here
+    
     // XT
     PORTB = B11100000;  
     delayMicroseconds(500);
-    // XXi
+    // XSi
     PORTB = B00010000;
     PORTA = B11000000;
     delayMicroseconds(16500);
@@ -34,12 +38,17 @@ void loop()
     delayMicroseconds(1300);
     // T3i
     PORTA = B00000001;
-    PORTC = B11111111; 
-    delayMicroseconds(1300);
+    PORTC = B11111100; 
+    delayMicroseconds(13000);
     // T5i
-    PORTG = B11111111; 
+    PORTC = B00000011;
+    PORTG = B11100000; 
+    delayMicroseconds(20000);
+    // 7D
+    PORTG = B00011111; 
     PORTL = B11111111;
-    delay(50);    
+    delay(50);
+    // Reset
     PORTA = B00000000;
     PORTB = B00000000;
     PORTC = B00000000;
